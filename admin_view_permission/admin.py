@@ -320,7 +320,7 @@ class AdminViewPermissionModelAdmin(AdminViewPermissionBaseModelAdmin,
             inlines = self.get_inline_instances(request, obj)
             for inline in inlines:
                 if (inline._has_change_only_permission(request, obj) or
-                        inline.has_add_permission(request)):
+                        inline.has_add_permission(request, obj)):
                     extra_context['show_save'] = True
                     extra_context['show_save_and_continue'] = True
                     break
